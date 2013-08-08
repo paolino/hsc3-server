@@ -19,7 +19,7 @@ data SetAllocator i =
                        !i
         deriving (Eq, Show)
 
-cons :: Range i -> SetAllocator i
+cons :: Enum i => Range i -> SetAllocator i
 cons r = SetAllocator r Set.empty (Range.begin r)
 
 -- | Convert an id to a bit index.
